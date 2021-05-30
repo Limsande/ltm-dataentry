@@ -2,7 +2,8 @@
 #   docker image build -t ltm .
 #
 # Run:
-#   docker run -ti --rm -v $(pwd):/src --network=host -v /tmp/.X11-unix -e DISPLAY ltm bash
+#   beat_cors="/path/to/git@github.com:15Dkatz/beat-cors-server.git
+#   docker run -ti --rm -v $(pwd):/src -v "$beat_cors":/cors_proxy -v --network=host -v /tmp/.X11-unix -e DISPLAY ltm bash
 
 FROM    fedora
 RUN     dnf install -y npm

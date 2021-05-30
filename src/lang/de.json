@@ -79,5 +79,13 @@
   "new.input.burialplace": "Ort der Beerdigung",
   "new.input.burialplaceGOV": "GOV des Beerdigungsortes",
   "new.createButton": "Erstellen",
-  "new.cancelButton": "Abbrechen"
+  "new.cancelButton": "Abbrechen",
+
+  "view.message.loading": "Daten werden geladen...",
+  "view.message.notFound": "Es existiert kein Eintrag mit dieser ID",
+  "view.button.loginToEdit": "Zum Bearbeiten einloggen",
+  "view.button.proposeChange": "Änderung vorschlagen",
+  "view.button.markInvalid": "Als falsch melden",
+  "view.tableHeading.attribute": "Attribut",
+  "view.tableHeading.value": "Wert"
 }

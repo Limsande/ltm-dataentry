@@ -79,5 +79,13 @@
   "new.input.burialplace": "Place of Burial",
   "new.input.burialplaceGOV": "Place of Burial GOV",
   "new.createButton": "Create",
-  "new.cancelButton": "Cancel"
+  "new.cancelButton": "Cancel",
+
+  "view.message.loading": "Loading data...",
+  "view.message.notFound": "No such item",
+  "view.button.loginToEdit": "Login to edit",
+  "view.button.proposeChange": "Propose correction",
+  "view.button.markInvalid": "Flag as false",
+  "view.tableHeading.attribute": "Attribute",
+  "view.tableHeading.value": "Value"
 }

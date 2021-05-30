@@ -5,22 +5,27 @@ import Login from "./routes/login";
 import Data from "./routes/data";
 import {Provider} from "react-redux";
 import store from "./store";
+import {Header} from "./components/header";
+import '../styles/app.scss';
+import CreateEntry from "./routes/new";
+import LandingPage from "./routes/landing";
+import Register from "./routes/register";
+
 
 export default class LtmDataentry extends React.Component {
     render() {
         return (
             <Provider store={store}>
                 <Router>
-                    <h1>Hello World!</h1>
 
-                    <ul>
-                        <li><Link to="/login" role="menuitem" tabIndex="0">Login</Link></li>
-                        <li><Link to="/data" role="menuitem" tabIndex="-1">Data</Link></li>
-                    </ul>
+                    <Header />
 
                     <Switch>
+                        <Route path="/" exact component={LandingPage} />
                         <Route path="/login" component={Login} />
                         <Route path="/data" component={Data} />
+                        <Route path="/new" component={CreateEntry} />
+                        <Route path="/register" component={Register} />
                     </Switch>
                 </Router>
             </Provider>

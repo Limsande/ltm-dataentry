@@ -1,0 +1,29 @@
+{
+  "menu.link.home": "Startseite",
+  "menu.link.datalist": "Alle Einträge",
+  "menu.link.newdata": "Neuer Eintrag",
+  "menu.link.login": "Login",
+
+  "header.title": "Leipzig Time Machine - Data Entry Tool",
+
+  "landing.title": "Startseite",
+
+  "login.title": "Login",
+  "login.message.alreadyLoggedIn": "Sie sind bereits eingeloggt",
+  "login.message.noSuchEmail": "Es existiert kein Benutzer mit der E-Mail-Adresse {email}.",
+  "login.email.label": "E-Mail-Adresse",
+  "login.email.placeholder": "Ihre E-Mail-Adresse",
+  "login.loginButton": "Login",
+  "login.text.questionNoAccountYet": "Sie haben noch keinen Account? <Link>Account erstellen</Link>",
+
+  "register.title": "Account erstellen",
+  "register.message.success": "Account erstellt",
+  "register.message.emailAlreadyInUse": "Es besteht bereits ein Account mit der E-Mail-Adresse {email}.",
+  "register.email.label": "E-Mail-Adresse",
+  "register.email.placeholder": "Ihre E-Mail-Adresse",
+  "register.role.label": "Rolle",
+  "register.role.admin": "Admin",
+  "register.role.contributor": "Mitarbeiter",
+  "register.createButton": "Account erstellen",
+  "register.text.questionAlreadyHaveAccount": "Haben Sie bereits einen Account? <Link>Login</Link>"
+}

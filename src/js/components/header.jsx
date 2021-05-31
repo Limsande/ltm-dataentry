@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {FormattedMessage} from 'react-intl';
 import Menu from './menu.jsx';
 import {Link} from "react-router-dom";
 
@@ -10,14 +10,22 @@ export class Header extends React.Component {
             <div>
                 <header className="top-bar">
                     <div className="top-bar-left">
-                        <h1>Leipzig Time Machine - Data Entry Tool</h1>
+                        <h1><FormattedMessage id="header.title" /></h1>
                     </div>
                     <div className="top-bar-right">
                         <Menu label="Main" class="horizontal">
-                            <li><Link to="/" role="menuitem" tabIndex="0">Home</Link></li>
-                            <li><Link to="/data" role="menuitem" tabIndex="-1">Data</Link></li>
-                            <li><Link to="/new" role="menuitem" tabIndex="-1">Eintrag erstellen</Link></li>
-                            <li><Link to="/login" role="menuitem" tabIndex="-1">Login</Link></li>
+                            <li><Link to="/" role="menuitem" tabIndex="0">
+                                <FormattedMessage id="menu.link.home" />
+                            </Link></li>
+                            <li><Link to="/data" role="menuitem" tabIndex="-1">
+                                <FormattedMessage id="menu.link.datalist" />
+                            </Link></li>
+                            <li><Link to="/new" role="menuitem" tabIndex="-1">
+                                <FormattedMessage id="menu.link.newdata" />
+                            </Link></li>
+                            <li><Link to="/login" role="menuitem" tabIndex="-1">
+                                <FormattedMessage id="menu.link.login" />
+                            </Link></li>
                         </Menu>
                     </div>
                 </header>

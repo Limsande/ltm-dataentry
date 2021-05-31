@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {FormattedMessage} from "react-intl";
+import {getTranslationsForCurrentLocale} from "../common";
 
 export default class Register extends React.Component {
     constructor(props) {
@@ -7,7 +9,7 @@ export default class Register extends React.Component {
 
         this.state = {
             email: '',
-            role: '',
+            role: 'admin',
             emailInUse: false,
             success: false
         }
@@ -43,7 +45,7 @@ export default class Register extends React.Component {
      */
     render() {
         if (this.state.success){
-            return <h2>Account created</h2>
+            return <h2><FormattedMessage id="register.message.success" /></h2>
         }
 
         let errorTag = null;
@@ -51,33 +53,59 @@ export default class Register extends React.Component {
         let errorInput = null;
         if (this.state.emailInUse) {
             errorTag = (
-                <span className="form-error is-visible">An account already exists with the e-mail address {this.state.email}.</span>
+                <span className="form-error is-visible">
+                    <FormattedMessage
+                        id="register.message.emailAlreadyInUse"
+                        values={{ email: this.state.email }}
+                    />
+                </span>
             );
             errorLabel = 'is-invalid-label';
             errorInput = 'is-invalid-input';
         }
         return (
             <main className="grid-container-x small callout">
-                <h1>Create an account</h1>
+                <h1><FormattedMessage id="register.title" /></h1>
                 <form onSubmit={this.handleRegister}>
                     <div>
-                        <label className={errorLabel}>E-Mail Address
-                            <input type="email" name="email" placeholder="Your e-mail address" tabIndex="1" required="required" value={this.state.email} onChange={this.updateEmail} className={errorInput} />
+                        <label className={errorLabel}>
+                            <FormattedMessage id="register.email.label" />
+                            {/* FIXME placeholder appears as "[object Object]"
+                            * I have no idea how to fix this, because only string is
+                            * supported as placeholder. Found a suggestion to use a
+                            * custom input component with that capability, but couldn't
+                            * find an implementation yet. Maybe it would be easier to
+                            * check the current locale and insert the correct translation.
+                            */}
+                            <input
+                                type="email" name="email"
+                                placeholder={getTranslationsForCurrentLocale()['register.email.placeholder']} tabIndex="1"
+                                required="required" value={this.state.email} onChange={this.updateEmail}
+                                className={errorInput}
+                            />
                             {errorTag}
                         </label>
-                        <label>Role
+                        <label>
+                            <FormattedMessage id="register.role.label" />
                             <select value={this.state.role} onChange={this.updateRole}>
-                                <option value="admin">Admin</option>
-                                <option value="contributor">Contributor</option>
+                                <FormattedMessage id="register.role.admin" tagName="option" value="admin" />
+                                <FormattedMessage id="register.role.contributor" tagName="option" value="contributor" />
                             </select>
                         </label>
                     </div>
                     <div className="text-right">
-                        <button tabIndex="2" className="button">Create account</button>
+                        <button tabIndex="2" className="button">
+                            <FormattedMessage id="register.createButton" />
+                        </button>
                     </div>
                 </form>
                 <div>
-                    <p>Already have an account? <Link to="/login">Login</Link></p>
+                    <p>
+                        <FormattedMessage
+                            id="register.text.questionAlreadyHaveAccount"
+                            values={{ Link: chunks => (<Link to="/login">{chunks}</Link>) }}
+                        />
+                    </p>
                 </div>
             </main>
         )

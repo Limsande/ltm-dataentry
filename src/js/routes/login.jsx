@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {FormattedMessage} from "react-intl";
+import {getTranslationsForCurrentLocale} from "../common";
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -37,7 +39,7 @@ export default class Login extends React.Component {
      */
     render() {
         if (this.state.loggedIn){
-            return <h2>Already logged in</h2>
+            return <h2><FormattedMessage id="login.message.alreadyLoggedIn" /></h2>
         }
 
         let errorTag = null;
@@ -45,27 +47,48 @@ export default class Login extends React.Component {
         let errorInput = null;
         if (!this.state.loginValid) {
             errorTag = (
-                <span className="form-error is-visible">No user exists with the e-mail address {this.state.email}.</span>
+                <span className="form-error is-visible">
+                    <FormattedMessage id="login.message.noSuchEmail" values={{ email:this.state.email }} />
+                </span>
             );
             errorLabel = 'is-invalid-label';
             errorInput = 'is-invalid-input';
         }
         return (
             <main className="grid-container-x small callout">
-                <h1>Login</h1>
+                <h1><FormattedMessage id="login.title" /></h1>
                 <form onSubmit={this.handleLogin}>
                     <div>
-                        <label className={errorLabel}>E-Mail Address
-                            <input type="email" name="email" placeholder="Your e-mail address" tabIndex="1" required="required" value={this.state.email} onChange={this.updateEmail} className={errorInput} />
+                        <label className={errorLabel}>
+                            <FormattedMessage id="login.email.label" />
+                            {/* FIXME placeholder appears as "[object Object]"
+                            * I have no idea how to fix this, because only string is
+                            * supported as placeholder. Found a suggestion to use a
+                            * custom input component with that capability, but couldn't
+                            * find an implementation yet. Maybe it would be easier to
+                            * check the current locale and insert the correct translation.
+                            */}
+                            <input
+                                type="email" name="email" tabIndex="1" required="required" value={this.state.email}
+                                placeholder={getTranslationsForCurrentLocale()['login.email.placeholder']}
+                                onChange={this.updateEmail} className={errorInput}
+                            />
                             {errorTag}
                         </label>
                     </div>
                     <div className="text-right">
-                        <button tabIndex="2" className="button">Login</button>
+                        <button tabIndex="2" className="button">
+                            <FormattedMessage id="login.loginButton" />
+                        </button>
                     </div>
                 </form>
                 <div>
-                    <p>You don't have an account yet? <Link to="/register">Create an account</Link></p>
+                    <p>
+                        <FormattedMessage
+                            id="login.text.questionNoAccountYet"
+                            values={{ Link: chunks => (<Link to="/register">{chunks}</Link>) }}
+                        />
+                    </p>
                 </div>
             </main>
         )

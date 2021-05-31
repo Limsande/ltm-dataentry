@@ -10,9 +10,11 @@ import '../styles/app.scss';
 import CreateEntry from "./routes/new";
 import LandingPage from "./routes/landing";
 import Register from "./routes/register";
-
+import {IntlProvider} from "react-intl";
+import {getTranslationsForCurrentLocale, getCurrentLocale} from "./common";
 
 export default class LtmDataentry extends React.Component {
+
     render() {
         return (
             <Provider store={store}>
@@ -33,4 +35,14 @@ export default class LtmDataentry extends React.Component {
     }
 }
 
-ReactDOM.render(<LtmDataentry/>, document.getElementById('app-entry-point'));
+ReactDOM.render(
+    /* Equip the IntlProvider with the translations for current locale,
+    * what makes them available to the app we wrap inside the provider. */
+    <IntlProvider
+        locale={getCurrentLocale()}
+        messages={getTranslationsForCurrentLocale()}
+        defaultLocale="en"
+    >
+        <LtmDataentry/>
+    </IntlProvider>,
+    document.getElementById('app-entry-point'));

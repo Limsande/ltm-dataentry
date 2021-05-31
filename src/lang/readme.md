@@ -1,0 +1,1 @@
+This directory contains translations of all in-app text for different locales.

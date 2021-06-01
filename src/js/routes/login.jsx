@@ -55,34 +55,29 @@ export default class Login extends React.Component {
             errorInput = 'is-invalid-input';
         }
         return (
-            <main className="grid-container-x small callout">
-                <h1><FormattedMessage id="login.title" /></h1>
-                <form onSubmit={this.handleLogin}>
-                    <div>
-                        <label className={errorLabel}>
-                            <FormattedMessage id="login.email.label" />
-                            <input
-                                type="email" name="email" tabIndex="1" required="required" value={this.state.email}
-                                placeholder={getTranslationsForCurrentLocale()['login.email.placeholder']}
-                                onChange={this.updateEmail} className={errorInput}
-                            />
-                            {errorTag}
-                        </label>
-                    </div>
-                    <div className="text-right">
-                        <button tabIndex="2" className="button">
-                            <FormattedMessage id="login.loginButton" />
-                        </button>
-                    </div>
-                </form>
-                <div>
-                    <p>
-                        <FormattedMessage
-                            id="login.text.questionNoAccountYet"
-                            values={{ Link: chunks => (<Link to="/register">{chunks}</Link>) }}
+            <main className="grid-container-x small">
+                {/* Styling borrowed from https://get.foundation/building-blocks/blocks/form-login.html */}
+                <form onSubmit={this.handleLogin} className="log-in-form">
+                    <h4 className="text-center"><FormattedMessage id="login.title" /></h4>
+                    <label className={errorLabel}>
+                        <FormattedMessage id="login.email.label" />
+                        <input
+                            type="email" name="email" tabIndex="1" required="required" value={this.state.email}
+                            placeholder={getTranslationsForCurrentLocale()['login.email.placeholder']}
+                            onChange={this.updateEmail} className={errorInput}
                         />
-                    </p>
-                </div>
+                        {errorTag}
+                    </label>
+                    <button tabIndex="2" className="button expanded">
+                        <FormattedMessage id="login.loginButton" />
+                    </button>
+                    <p className="text-center">
+                    <FormattedMessage
+                        id="login.text.questionNoAccountYet"
+                        values={{ Link: chunks => (<Link to="/register">{chunks}</Link>) }}
+                    />
+                </p>
+                </form>
             </main>
         )
     }

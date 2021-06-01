@@ -64,42 +64,37 @@ export default class Register extends React.Component {
             errorInput = 'is-invalid-input';
         }
         return (
-            <main className="grid-container-x small callout">
-                <h1><FormattedMessage id="register.title" /></h1>
-                <form onSubmit={this.handleRegister}>
-                    <div>
-                        <label className={errorLabel}>
-                            <FormattedMessage id="register.email.label" />
-                            <input
-                                type="email" name="email"
-                                placeholder={getTranslationsForCurrentLocale()['register.email.placeholder']} tabIndex="1"
-                                required="required" value={this.state.email} onChange={this.updateEmail}
-                                className={errorInput}
-                            />
-                            {errorTag}
-                        </label>
-                        <label>
-                            <FormattedMessage id="register.role.label" />
-                            <select value={this.state.role} onChange={this.updateRole}>
-                                <FormattedMessage id="register.role.admin" tagName="option" value="admin" />
-                                <FormattedMessage id="register.role.contributor" tagName="option" value="contributor" />
-                            </select>
-                        </label>
-                    </div>
-                    <div className="text-right">
-                        <button tabIndex="2" className="button">
-                            <FormattedMessage id="register.createButton" />
-                        </button>
-                    </div>
-                </form>
-                <div>
-                    <p>
+            <main className="grid-container-x small">
+                {/* Styling borrowed from https://get.foundation/building-blocks/blocks/form-login.html */}
+                <form onSubmit={this.handleRegister} className="log-in-form">
+                    <h4 className="text-center"><FormattedMessage id="register.title" /></h4>
+                    <label className={errorLabel}>
+                        <FormattedMessage id="register.email.label" />
+                        <input
+                            type="email" name="email"
+                            placeholder={getTranslationsForCurrentLocale()['register.email.placeholder']} tabIndex="1"
+                            required="required" value={this.state.email} onChange={this.updateEmail}
+                            className={errorInput}
+                        />
+                        {errorTag}
+                    </label>
+                    <label>
+                        <FormattedMessage id="register.role.label" />
+                        <select value={this.state.role} onChange={this.updateRole}>
+                            <FormattedMessage id="register.role.admin" tagName="option" value="admin" />
+                            <FormattedMessage id="register.role.contributor" tagName="option" value="contributor" />
+                        </select>
+                    </label>
+                    <button tabIndex="2" className="button expanded">
+                        <FormattedMessage id="register.createButton" />
+                    </button>
+                    <p className="text-center">
                         <FormattedMessage
                             id="register.text.questionAlreadyHaveAccount"
                             values={{ Link: chunks => (<Link to="/login">{chunks}</Link>) }}
                         />
                     </p>
-                </div>
+                </form>
             </main>
         )
     }

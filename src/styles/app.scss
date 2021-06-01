@@ -1,6 +1,89 @@
+/*
+ * Borrowed from https://mht.uzi.uni-halle.de/client-seitige-web-anwendungen
+ * (where not otherwise noted)
+ */
+
 @import "settings";
 @import '~foundation-sites/scss/foundation';
 @include foundation-everything;
+
+/*
+ * Basic styles
+ */
+body {
+    margin: 0;
+}
+a:link {
+    color: rgb(73, 91, 115);
+    text-decoration: none;
+}
+a:visited {
+    color: #374557;
+}
+a:focus, a:hover {
+    color: rgb(92, 115, 145);
+}
+h1 {
+    margin-top: 0;
+}
+.text-right {
+    text-align: right;
+}
+
+/*
+ * Grid styles
+ */
+.grid-container-x {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.grid-container-x.small {
+    max-width: 480px;
+}
+.grid-x {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.grid-x.grid-padding-x .cell {
+    padding: 0 1rem;
+}
+.cell {
+    display: block;
+    flex: 1 1;
+    box-sizing: border-box;
+}
+.cell.shrink {
+    flex: 0 0;
+}
+.cell.auto {
+    flex: auto;
+}
+.cell.small-12 {
+    flex: 0 0 100%;
+}
+@media (min-width: 640px) {
+    .cell.large-shrink {
+        flex: 0 0;
+    }
+    .cell.large-auto {
+        flex: auto;
+    }
+}
+
+/*
+ * Visibility classes
+ */
+.small-hidden {
+    display: none;
+}
+@media (min-width: 640px) {
+    .small-hidden {
+        display: block;
+    }
+}
 
 /*
  * Menu styles
@@ -31,6 +114,103 @@ ul[role="menu"] {
 }
 
 /*
+ * Callout component
+ */
+.callout {
+    color: rgb(242, 242, 242);
+    background: rgb(73, 91, 115);
+    border: 1px solid rgb(55, 69, 87);
+    padding: 1rem;
+}
+
+/*
+ * Form styles
+ */
+label {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+    font-size: 90%;
+    font-variant: small-caps;
+}
+input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+button {
+    cursor: pointer;
+    background: rgb(242, 242, 242);
+    border: 1px solid rgb(55, 69, 87);
+    padding: 0.3rem 0.8rem;
+}
+button:hover, button:focus {
+    color: rgb(242, 242, 242);
+    background: rgb(92, 115, 145);
+}
+
+/*
+ * Header styles
+ */
+header {
+    background: rgb(242, 242, 242);
+    border-bottom: 1px solid rgb(73, 91, 115);
+    margin-bottom: 2rem;
+    box-shadow: 0 0 5px rgb(196, 196, 196);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+header .app-title {
+    margin-top: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/*
+ * Footer styles
+ */
+footer {
+    margin-top: 2rem;
+    border-top: 1px dotted rgb(73, 91, 115);
+    padding: 0.5rem;
+    font-size: 80%;
+}
+
+/*
+ * Table styles
+ */
+thead th {
+    text-align: left;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+thead th {
+    border-bottom: 1px solid rgb(73, 91, 115);
+}
+tbody td {
+    padding: 0.5rem;
+}
+tbody tr:nth-child(2n) td {
+    background: rgb(242, 242, 242);
+}
+tbody td {
+    padding: 0.5rem;
+}
+@media (max-width: 640px) {
+    table {
+        width: 100%;
+    }
+    table th {
+        display: none;
+    }
+    table td {
+        display: block;
+    }
+}
+
+/*
  * Icon styles
  */
 .mdi.warning:link, .mdi.warning:visited {
@@ -38,4 +218,14 @@ ul[role="menu"] {
 }
 .mdi.warning:hover, .mdi.warning:focus {
     color: lighten(get-color('alert'), 10%);
+}
+
+/*
+ * Login form styles
+ * (from https://get.foundation/building-blocks/blocks/form-login.html)
+ */
+.log-in-form {
+    border: 1px solid $medium-gray;
+    padding: $form-spacing;
+    border-radius: $global-radius;
 }

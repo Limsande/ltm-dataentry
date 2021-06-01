@@ -70,13 +70,6 @@ export default class Register extends React.Component {
                     <div>
                         <label className={errorLabel}>
                             <FormattedMessage id="register.email.label" />
-                            {/* FIXME placeholder appears as "[object Object]"
-                            * I have no idea how to fix this, because only string is
-                            * supported as placeholder. Found a suggestion to use a
-                            * custom input component with that capability, but couldn't
-                            * find an implementation yet. Maybe it would be easier to
-                            * check the current locale and insert the correct translation.
-                            */}
                             <input
                                 type="email" name="email"
                                 placeholder={getTranslationsForCurrentLocale()['register.email.placeholder']} tabIndex="1"

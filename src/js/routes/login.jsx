@@ -61,13 +61,6 @@ export default class Login extends React.Component {
                     <div>
                         <label className={errorLabel}>
                             <FormattedMessage id="login.email.label" />
-                            {/* FIXME placeholder appears as "[object Object]"
-                            * I have no idea how to fix this, because only string is
-                            * supported as placeholder. Found a suggestion to use a
-                            * custom input component with that capability, but couldn't
-                            * find an implementation yet. Maybe it would be easier to
-                            * check the current locale and insert the correct translation.
-                            */}
                             <input
                                 type="email" name="email" tabIndex="1" required="required" value={this.state.email}
                                 placeholder={getTranslationsForCurrentLocale()['login.email.placeholder']}

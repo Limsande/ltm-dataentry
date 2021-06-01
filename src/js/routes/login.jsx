@@ -1,16 +1,28 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import {FormattedMessage} from "react-intl";
 import {getTranslationsForCurrentLocale} from "../common";
 
+/**
+ * Displays a login form. Optionally redirects after successful login to URL
+ * given via <location.redirectTo> property.
+ */
 export default class Login extends React.Component {
+
+    /**
+     * @param props
+     *  - location.redirectTo Optional URL to redirect to after successful login.
+     *    Property <location.loggedIn> is set to true on the destination
+     */
     constructor(props) {
         super(props);
 
         this.state = {
             email: '',
             loginValid: true,
-            loggedIn: false
+            loggedIn: false,
+            // if this is set, we want to redirect there after login
+            redirectTo: this.props.location.redirectTo
         }
     }
 
@@ -39,6 +51,13 @@ export default class Login extends React.Component {
      */
     render() {
         if (this.state.loggedIn){
+            if (this.state.redirectTo){
+                const redirectTo = {
+                    pathname: this.state.redirectTo,
+                    loggedIn: true
+                }
+                return <Redirect to={redirectTo} />
+            }
             return <h2><FormattedMessage id="login.message.alreadyLoggedIn" /></h2>
         }
 

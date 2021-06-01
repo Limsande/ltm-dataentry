@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { readEndpoint } from 'redux-json-api';
+import {Link} from "react-router-dom";
 
 class View extends React.Component {
 
@@ -16,7 +17,21 @@ class View extends React.Component {
      * Render the component
      */
     render() {
-        return <h1>Values of this data</h1>
+
+        const loginURL = {
+            pathname: "/login",
+            redirectTo: document.location.pathname
+        };
+
+        return (
+            <div>
+                <h1>Values of this data</h1>
+
+                {/* link to login
+                * see (https://reacttraining.com/react-router/web/api/location) */}
+                <Link to={loginURL}>Login to edit</Link>
+            </div>
+        )
     }
 }
 

@@ -7,13 +7,21 @@ import {FormattedMessage} from "react-intl";
 
 /**
  * Component to create a new item at the API`s "data" endpoint. Renders a form, so that
- * the user can set a value for each of the item's keys.
+ * the user can set a value for each of the item's keys. Redirects to /login, if the property
+ * <location.loggedIn> is not set to true.
  */
 class CreateEntry extends React.Component {
 
+    /**
+     * @param props
+     *  - location.loggedIn Whether the user is logged in
+     */
     constructor(props) {
         super(props);
+
         this.state = {
+            loggedIn: this.props.location.loggedIn,
+
             idGlobal: '',  // required
             idSource1: '',  // required
             idSource2: '',  // required
@@ -113,6 +121,15 @@ class CreateEntry extends React.Component {
      * Render the component
      */
     render() {
+        if (!this.state.loggedIn) {
+            const loginURL = {
+                pathname: "/login",
+                redirectTo: document.location.pathname
+            };
+
+            return <Redirect to={loginURL} />
+        }
+
         if(this.state.created) {
             {/* TODO */}
             return <h1>Not supported</h1>

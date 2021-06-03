@@ -229,3 +229,16 @@ tbody td {
     padding: $form-spacing;
     border-radius: $global-radius;
 }
+
+/*
+ * "Create new entry" from styles
+ */
+.new-entry-form {
+    border: 1px solid $medium-gray;
+    padding: $form-spacing;
+    border-radius: $global-radius;
+}
+.new-entry-section {
+    border: 1px solid $medium-gray;
+    padding: $form-spacing;
+}

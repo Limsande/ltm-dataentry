@@ -7,7 +7,7 @@ import {Provider} from "react-redux";
 import store from "./store";
 import {Header} from "./components/header";
 import '../styles/app.scss';
-import CreateEntry from "./routes/new";
+import CreateEntry from "./routes/data/new";
 import LandingPage from "./routes/landing";
 import Register from "./routes/register";
 import {IntlProvider} from "react-intl";

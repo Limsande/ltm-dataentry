@@ -87,5 +87,10 @@
   "view.button.proposeChange": "Änderung vorschlagen",
   "view.button.markInvalid": "Als falsch melden",
   "view.tableHeading.attribute": "Attribut",
-  "view.tableHeading.value": "Wert"
+  "view.tableHeading.value": "Wert",
+
+  "edit.title": "Bearbeite Eintrag mit ID '{item}'",
+  "edit.input.label": "Geben Sie einen Text ein, der im Attribut 'source' des Eintrags gespeichert wird",
+  "edit.cancelButton": "Abbrechen",
+  "edit.confirmationButton": "Update"
 }

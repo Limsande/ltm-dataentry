@@ -87,5 +87,10 @@
   "view.button.proposeChange": "Propose correction",
   "view.button.markInvalid": "Flag as false",
   "view.tableHeading.attribute": "Attribute",
-  "view.tableHeading.value": "Value"
+  "view.tableHeading.value": "Value",
+
+  "edit.title": "Edit item with ID '{item}'",
+  "edit.input.label": "Enter a text to be stored in this data item's source attribute",
+  "edit.cancelButton": "Cancel",
+  "edit.confirmationButton": "Update"
 }

@@ -92,5 +92,10 @@
   "edit.title": "Bearbeite Eintrag mit ID '{item}'",
   "edit.input.label": "Geben Sie einen Text ein, der im Attribut 'source' des Eintrags gespeichert wird",
   "edit.cancelButton": "Abbrechen",
-  "edit.confirmationButton": "Update"
+  "edit.confirmationButton": "Update",
+
+  "data.index.title": "Liste aller Einträge",
+  "data.index.tableHeading.id": "ID",
+  "data.index.tableHeading.surname": "Nachname",
+  "data.index.tableHeading.firstname": "Vorname"
 }

@@ -34,7 +34,7 @@
   "new.input.idGlobal": "ID",
   "new.input.similarity": "Similarity Score",
   "new.group.basic.title": "Basic Data",
-  "new.input.firstnameGiven": "Firstname",
+  "new.input.firstnameGiven": "First Name",
   "new.input.surnameGiven": "Surname",
   "new.input.sex": "Sex",
   "new.input.sex.male": "male",
@@ -65,7 +65,7 @@
   "new.input.idSpouse": "Spouse's ID",
   "new.input.divorceday": "Day of Divorce",
   "new.group.nameChanges.title": "Name Changes",
-  "new.input.firstnameChange": "New Firstname",
+  "new.input.firstnameChange": "New First Name",
   "new.input.surnameChange": "New Surname",
   "new.input.surnameUnknown": "New Surname (Reason unknown)",
   "new.group.death.title": "Death and Burial",
@@ -92,5 +92,10 @@
   "edit.title": "Edit item with ID '{item}'",
   "edit.input.label": "Enter a text to be stored in this data item's source attribute",
   "edit.cancelButton": "Cancel",
-  "edit.confirmationButton": "Update"
+  "edit.confirmationButton": "Update",
+
+  "data.index.title": "List of Entries",
+  "data.index.tableHeading.id": "ID",
+  "data.index.tableHeading.surname": "Surname",
+  "data.index.tableHeading.firstname": "First Name"
 }

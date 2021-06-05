@@ -176,7 +176,6 @@ footer {
     margin-top: 2rem;
     border-top: 1px dotted rgb(73, 91, 115);
     padding: 0.5rem;
-    font-size: 80%;
 }
 
 /*
@@ -303,3 +302,9 @@ e {
     font-weight: bold;
 }
 
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}

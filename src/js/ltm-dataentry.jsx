@@ -12,6 +12,7 @@ import LandingPage from "./routes/landing";
 import Register from "./routes/register";
 import {IntlProvider} from "react-intl";
 import {getTranslationsForCurrentLocale, getCurrentLocale} from "./common";
+import {Footer} from "./components/footer";
 
 export default class LtmDataentry extends React.Component {
 
@@ -19,16 +20,19 @@ export default class LtmDataentry extends React.Component {
         return (
             <Provider store={store}>
                 <Router>
+                    <div className="flex-wrapper">
+                        <Header />
 
-                    <Header />
+                        <Switch>
+                            <Route path="/" exact component={LandingPage} />
+                            <Route path="/login" component={Login} />
+                            <Route path="/data" component={Data} />
+                            <Route path="/new" component={CreateEntry} />
+                            <Route path="/register" component={Register} />
+                        </Switch>
 
-                    <Switch>
-                        <Route path="/" exact component={LandingPage} />
-                        <Route path="/login" component={Login} />
-                        <Route path="/data" component={Data} />
-                        <Route path="/new" component={CreateEntry} />
-                        <Route path="/register" component={Register} />
-                    </Switch>
+                        <Footer />
+                    </div>
                 </Router>
             </Provider>
         );

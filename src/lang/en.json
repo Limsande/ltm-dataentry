@@ -7,6 +7,12 @@
   "header.title": "Leipzig Time Machine - Data Entry Tool",
 
   "landing.title": "Home",
+  "landing.aboutLTM.heading": "The Leipzig Time Machine",
+  "landing.aboutLTM.text": "The idea of bringing together several already existing databases with historic content relating to the city of Leipzig and its citizens started in the year 2019 and has now been consolidated under the patronage of the Leipzig City Archive and the Time Machine Organisation.",
+  "landing.aboutTimeMachine.text": "Time Machine is aiming to join Europe’s rich past with up-to-date digital technologies and infrastructures, creating a collective digital information system mapping the European economic, social, cultural and geographical evolution across times.",
+  "landing.about.heading": "About this page",
+  "landing.about.text.p1": "This page is a tool for viewing, creating and editing records. A single record is a linkage of two mentions of the same person.",
+  "landing.about.text.p2": "At the top right under <e>All entries</e> you can display a list of all entries. From there you can get to the detail view of any entry, where it can also be edited. With <e>New entry</e> a new entry can be created. To edit and create, you must first register or log in.",
 
   "login.title": "Login",
   "login.message.alreadyLoggedIn": "Already logged in",

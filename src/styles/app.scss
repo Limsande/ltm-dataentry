@@ -242,3 +242,64 @@ tbody td {
     border: 1px solid $medium-gray;
     padding: $form-spacing;
 }
+
+/*
+ * Styles for block quotes
+ * (from https://get.foundation/building-blocks/blocks/blockquote.html)
+ */
+.blockquote-container {
+    &.blockquote-left {
+        float: left;
+        width: 35%;
+        margin-right: $global-margin;
+
+        @include breakpoint (small only) {
+            float: none;
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    &.blockquote-right {
+        float: right;
+        width: 35%;
+        margin-left: $global-margin;
+    }
+
+    .callout2 {
+        .blockquote-title {
+            margin-left: 1rem;
+        }
+
+        blockquote {
+            quotes: "“""”""‘""’  ";
+            border-left: none;
+
+            &:before {
+                content: open-quote;
+                color: $dark-gray;
+                font-size: 4em;
+                line-height: 0.1em;
+                vertical-align: -0.4em;
+            }
+
+            &:after {
+                content: close-quote;
+                color: $dark-gray;
+                font-size: 4em;
+                line-height: 0.1em;
+                vertical-align: -0.6em;
+            }
+
+            .blockquote-content {
+                display: inline;
+                color: $black;
+            }
+        }
+    }
+}
+
+e {
+    font-weight: bold;
+}
+

@@ -16,6 +16,7 @@ export default class Login extends React.Component {
      * @param props
      *  - location.redirectTo Optional URL to redirect to after successful login.
      *    Property <location.loggedIn> is set to true on the destination
+     *  - location.message Optional message to be displayed with the login form
      */
     constructor(props) {
         super(props);
@@ -25,7 +26,9 @@ export default class Login extends React.Component {
             loginValid: true,
             loggedIn: false,
             // if this is set, we want to redirect there after login
-            redirectTo: this.props.location.redirectTo
+            redirectTo: this.props.location.redirectTo,
+            // if this is set, it will be displayed with the login form
+            message: this.props.location.message
         }
     }
 
@@ -78,6 +81,7 @@ export default class Login extends React.Component {
         }
         return (
             <main className="grid-container-x small">
+                {this.state.message ? <div>{this.state.message}</div> : null}
                 {/* Styling borrowed from https://get.foundation/building-blocks/blocks/form-login.html */}
                 <form onSubmit={this.handleLogin} className="log-in-form">
                     <h4 className="text-center"><FormattedMessage id="login.title" /></h4>

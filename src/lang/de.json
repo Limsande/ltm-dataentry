@@ -34,6 +34,7 @@
   "register.text.questionAlreadyHaveAccount": "Haben Sie bereits einen Account? <Link>Login</Link>",
 
   "new.title": "Neuen Eintrag erstellen",
+  "new.message.login": "Bitte einloggen, um einen neuen Eintrag anzulegen",
   "new.group.meta.title": "Metadaten",
   "new.input.idSource1": "Verknüpfungsziel 1",
   "new.input.idSource2": "Verknüpfungsziel 2",

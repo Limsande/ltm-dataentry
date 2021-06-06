@@ -124,7 +124,8 @@ class CreateEntry extends React.Component {
         if (!this.state.loggedIn) {
             const loginURL = {
                 pathname: "/login",
-                redirectTo: document.location.pathname
+                redirectTo: document.location.pathname,
+                message: <FormattedMessage id="new.message.login" />
             };
 
             return <Redirect to={loginURL} />

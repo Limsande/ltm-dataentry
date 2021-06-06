@@ -8,7 +8,7 @@ import {FormattedMessage} from "react-intl";
 /**
  * Component to create a new item at the API`s "data" endpoint. Renders a form, so that
  * the user can set a value for each of the item's keys. Redirects to /login, if the property
- * <location.loggedIn> is not set to true.
+ * <location.loggedIn> is not set to true (check the login component's NOTE ABOUT INSECURITY).
  */
 class CreateEntry extends React.Component {
 

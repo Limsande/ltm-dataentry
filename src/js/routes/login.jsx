@@ -5,7 +5,10 @@ import {getTranslationsForCurrentLocale} from "../common";
 
 /**
  * Displays a login form. Optionally redirects after successful login to URL
- * given via <location.redirectTo> property.
+ * given via <location.redirectTo> property with a <loggedIn> property set to true.
+ * NOTE THAT IT IS HIGHLY INSECURE to rely on this as information about login status
+ * and only serves demonstrative purposes. In a production system, this would be
+ * handled e.g. by some kind of token exchange with the backend.
  */
 export default class Login extends React.Component {
 

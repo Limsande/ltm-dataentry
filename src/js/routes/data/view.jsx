@@ -5,7 +5,9 @@ import {Link} from "react-router-dom";
 import {FormattedMessage} from "react-intl";
 
 /**
- * Displays a table with all (attribute, value) pairs of given data item.
+ * Displays a table with all (attribute, value) pairs of given data item. If the user is logged
+ * in (<location.loggedIn> is true), buttons to edit this data item are also rendered
+ * (check the login component's NOTE ABOUT INSECURITY).
  */
 class View extends React.Component {
 

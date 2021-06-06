@@ -144,21 +144,21 @@ class CreateEntry extends React.Component {
                 <main className="grid-container-x">
                     {/* TODO remove in production */}
                     <ConstructionNotice />
-                    
+
                     <form className="new-entry-form" onSubmit={this.createEntry}>
                         <h4 className="text-center"><FormattedMessage id="new.title" /></h4>
 
                         {/* METADATA */}
                         <FormInputGroup title="Metadaten" >
-                            <label className="cell auto"><FormattedMessage id="new.input.idSource1" />
+                            <label className="cell auto"><FormattedMessage id="new.input.idSource1" />*
                                 <input type="text" {...commonProps} placeholder="idSource1"
                                        id="idSource1" required="required" />
                             </label>
-                            <label className="cell auto"><FormattedMessage id="new.input.idSource2" />
+                            <label className="cell auto"><FormattedMessage id="new.input.idSource2" />*
                                 <input type="text" {...commonProps} placeholder="idSource2"
                                        id="idSource2" required="required" />
                             </label>
-                            <label className="cell auto"><FormattedMessage id="new.input.idGlobal" />
+                            <label className="cell auto"><FormattedMessage id="new.input.idGlobal" />*
                                 <input type="text" {...commonProps} placeholder="idGlobal"
                                        id="idGlobal" required="required" />
                             </label>
@@ -166,6 +166,7 @@ class CreateEntry extends React.Component {
                                 <input type="number" {...commonProps} placeholder="similarity"
                                        id="similarity"/>
                             </label>
+                            <p className="text-right">*) <FormattedMessage id="new.message.required" /></p>
                         </FormInputGroup>
 
                         {/* BASIC DATA */}

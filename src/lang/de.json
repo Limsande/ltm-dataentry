@@ -35,6 +35,7 @@
 
   "new.title": "Neuen Eintrag erstellen",
   "new.message.login": "Bitte einloggen, um einen neuen Eintrag anzulegen",
+  "new.message.required": "erforderlich",
   "new.group.meta.title": "Metadaten",
   "new.input.idSource1": "Verknüpfungsziel 1",
   "new.input.idSource2": "Verknüpfungsziel 2",

@@ -1,5 +1,8 @@
 # Leipzig Time Machine - Data Entry Tool
 
+## Documentation
+Exists in [German](doc/de/doc.md) and in [English](doc/en/doc.md).
+
 
 
 ## Setup dev environment

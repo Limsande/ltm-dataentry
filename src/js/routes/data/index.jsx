@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {Link} from "react-router-dom";
 import {readEndpoint} from "redux-json-api";
 import {FormattedMessage} from "react-intl";
+import {ConstructionNotice} from "../../components/construction_notice";
 
 class Index extends React.Component {
 
@@ -19,6 +20,11 @@ class Index extends React.Component {
      * Render the component
      */
     render() {
+        return (
+            /* TODO remove in production */
+            <ConstructionNotice />
+        );
+
         if (!this.props.data){
             // data not yet retrieved
             return <div><FormattedMessage id="view.message.loading" /></div>

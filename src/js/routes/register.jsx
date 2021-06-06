@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {FormattedMessage} from "react-intl";
 import {getTranslationsForCurrentLocale} from "../common";
+import {ConstructionNotice} from "../components/construction_notice";
 
 export default class Register extends React.Component {
     constructor(props) {
@@ -65,6 +66,8 @@ export default class Register extends React.Component {
         }
         return (
             <main className="grid-container-x small">
+                {/* TODO remove in production */}
+                <ConstructionNotice />
                 {/* Styling borrowed from https://get.foundation/building-blocks/blocks/form-login.html */}
                 <form onSubmit={this.handleRegister} className="log-in-form">
                     <h4 className="text-center"><FormattedMessage id="register.title" /></h4>

@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import FormInputGroup from "../../components/form_input_group";
 import FormInputGroupMarriage from "../../components/form_input_group_marriage";
 import {FormattedMessage} from "react-intl";
+import {ConstructionNotice} from "../../components/construction_notice";
 
 /**
  * Component to create a new item at the API`s "data" endpoint. Renders a form, so that
@@ -141,6 +142,9 @@ class CreateEntry extends React.Component {
 
             return (
                 <main className="grid-container-x">
+                    {/* TODO remove in production */}
+                    <ConstructionNotice />
+                    
                     <form className="new-entry-form" onSubmit={this.createEntry}>
                         <h4 className="text-center"><FormattedMessage id="new.title" /></h4>
 

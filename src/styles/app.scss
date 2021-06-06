@@ -308,3 +308,17 @@ e {
     flex-direction: column;
     justify-content: space-between;
 }
+
+/*
+ * TODO remove everything below in production
+ */
+.lower {
+    font-variant: normal;
+}
+
+.construction {
+    color: rgb(3, 3, 3);
+    background: rgb(250, 157, 95);
+    border: 1px solid rgb(55, 69, 87);
+    padding: 1rem;
+}

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { readEndpoint } from 'redux-json-api';
 import {Link} from "react-router-dom";
 import {FormattedMessage} from "react-intl";
+import {ConstructionNotice} from "../../components/construction_notice";
 
 /**
  * Displays a table with all (attribute, value) pairs of given data item. If the user is logged
@@ -32,6 +33,11 @@ class View extends React.Component {
      * Render the component
      */
     render() {
+        return (
+            /* TODO remove in production */
+            <ConstructionNotice />
+        );
+
         if (!this.props.data) {
             // data not yet retrieved
             return <div><FormattedMessage id="view.message.loading"/></div>;

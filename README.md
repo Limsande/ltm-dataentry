@@ -6,37 +6,46 @@ Exists in [German](doc/de/doc.md) and in [English](doc/en/doc.md).
 
 
 ## Setup dev environment
+
+To serve the app on [http://localhost:8080](http://localhost:8080), set it up either with or without Docker.
+
+### With Docker
 1) Clone this repository
     ```bash
     git clone git@github.com:Limsande/ltm-dataentry.git
     ```
 
-2) We also need a CORS proxy, because the backend does not set the `Access-Control-Allow-Origin`
-   header and so the browser will block our requests. The proxy has to serve the backend at
-   `http://localhost:3000`. We need the proxy's directory to mount it into the Docker container:
-   ```bash
-   cors_proxy="/path/to/proxy"
-   ```
-   
-3) Build the Docker image
+2) Build the Docker image
     ```bash
     cd ltm-dataentry
     docker image build -t ltm .
     ```
 
-4) Start a Docker container and start the Webpack server in it
-    ```bash
-    docker run -ti --rm -v $(pwd):/src -v "$cors_proxy":/cors_proxy \
-      --network=host -v /tmp/.X11-unix -e DISPLAY -w /src \
-      --name ltm-app ltm bash
-   
-    # Inside the container
-    $(npm bin)/webpack serve --config webpack.conf.js
-    ```
-
-5) Fire up the CORS proxy inside the container (assumed, `run.sh` starts the proxy)
+3) Install node modules from inside the container
    ```bash
-   docker exec -ti -w /cors_proxy ltm-app bash run.sh
+   docker run -ti --rm -v $(pwd):/src -w /src ltm "npm i"
    ```
 
-The app now serves on [http://localhost:8080](http://localhost:8080).
+4) Start a Docker container and start the Webpack server in it
+    ```bash
+    docker run -ti --rm -v $(pwd):/src --network=host -w /src \
+      --name ltm-app ltm bash -c '$(npm bin)/webpack serve --config webpack.conf.js'
+    ```
+
+
+### Without Docker
+1) Clone this repository
+    ```bash
+    git clone git@github.com:Limsande/ltm-dataentry.git
+    ```
+
+2) Install node modules
+   ```bash
+   cd ltm-dataentry
+   npm i
+   ```
+
+3) Start the Webpack server
+    ```bash
+    $(npm bin)/webpack serve --config webpack.conf.js
+    ```

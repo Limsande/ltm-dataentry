@@ -5,6 +5,9 @@ import Index from './data/index.jsx';
 import View from "./data/view";
 import Edit from "./data/edit";
 
+/**
+ * This component defines sub-routes for the "/data" route.
+ */
 export default function Data() {
     return (
         <Switch>

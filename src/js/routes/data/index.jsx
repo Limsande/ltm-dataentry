@@ -5,6 +5,9 @@ import {readEndpoint} from "redux-json-api";
 import {FormattedMessage} from "react-intl";
 import {ConstructionNotice} from "../../components/construction_notice";
 
+/**
+ * Renders a list of all data items.
+ */
 class Index extends React.Component {
 
     constructor(props) {

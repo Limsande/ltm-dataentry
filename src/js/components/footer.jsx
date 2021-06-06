@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * A component rendering a page footer.
+ */
 export class Footer extends React.Component {
 
     render() {

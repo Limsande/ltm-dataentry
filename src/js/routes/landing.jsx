@@ -2,6 +2,9 @@ import React from "react";
 import {FormattedMessage} from "react-intl";
 import {Link} from "react-router-dom";
 
+/**
+ * The landing page, aka home page, aka front page.
+ */
 export default class LandingPage extends React.Component {
     render () {
         return (

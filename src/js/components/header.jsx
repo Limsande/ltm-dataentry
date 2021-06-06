@@ -3,6 +3,9 @@ import {FormattedMessage} from 'react-intl';
 import Menu from './menu.jsx';
 import {Link} from "react-router-dom";
 
+/**
+ * A component rendering a page header with title and nav bar.
+ */
 export class Header extends React.Component {
 
     render() {

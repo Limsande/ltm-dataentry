@@ -4,6 +4,9 @@ import {FormattedMessage} from "react-intl";
 import {getTranslationsForCurrentLocale} from "../common";
 import {ConstructionNotice} from "../components/construction_notice";
 
+/**
+ * Displays a registration form.
+ */
 export default class Register extends React.Component {
     constructor(props) {
         super(props);

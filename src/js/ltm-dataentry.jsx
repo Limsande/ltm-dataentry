@@ -14,6 +14,9 @@ import {IntlProvider} from "react-intl";
 import {getTranslationsForCurrentLocale, getCurrentLocale} from "./common";
 import {Footer} from "./components/footer";
 
+/**
+ * The app's main component defining routes and overall page layout.
+ */
 export default class LtmDataentry extends React.Component {
 
     render() {

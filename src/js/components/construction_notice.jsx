@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * A component rendering a "this site is under construction" banner.
+ * TODO remove in production
+ */
 export class ConstructionNotice extends React.Component {
 
     render() {

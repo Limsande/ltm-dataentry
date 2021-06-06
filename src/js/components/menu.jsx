@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * ARIA-compliant menu component.
+ */
 export default class Menu extends React.Component {
     constructor(props) {
         super(props);

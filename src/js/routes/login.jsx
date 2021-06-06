@@ -57,14 +57,11 @@ export default class Login extends React.Component {
      */
     render() {
         if (this.state.loggedIn){
-            if (this.state.redirectTo){
-                const redirectTo = {
-                    pathname: this.state.redirectTo,
-                    loggedIn: true
-                }
-                return <Redirect to={redirectTo} />
+            const redirectTo = {
+                pathname: this.state.redirectTo ? this.state.redirectTo : "/",
+                loggedIn: true
             }
-            return <h2><FormattedMessage id="login.message.alreadyLoggedIn" /></h2>
+            return <Redirect to={redirectTo} />
         }
 
         let errorTag = null;

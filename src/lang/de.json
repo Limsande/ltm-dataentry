@@ -15,7 +15,6 @@
   "landing.about.text.p2": "Oben rechts unter <e>Alle Einträge</e> können Sie eine Liste aller Einträge anzeigen. Von dort gelangen Sie zur Detailansicht eines beliebigen Eintrages, wo dieser auch bearbeitet werden kann. Mit <e>Neuer Eintrag</e> kann ein neuer Eintrag erstellt werden. Zum Bearbeiten und Erstellen müssen Sie sich zunächst registrieren bzw. anmelden.",
 
   "login.title": "Login",
-  "login.message.alreadyLoggedIn": "Sie sind bereits eingeloggt",
   "login.message.noSuchEmail": "Es existiert kein Benutzer mit der E-Mail-Adresse {email}.",
   "login.email.label": "E-Mail-Adresse",
   "login.email.placeholder": "Ihre E-Mail-Adresse",

@@ -15,7 +15,6 @@
   "landing.about.text.p2": "At the top right under <e>All entries</e> you can display a list of all entries. From there you can get to the detail view of any entry, where it can also be edited. With <e>New entry</e> a new entry can be created. To edit and create, you must first register or log in.",
 
   "login.title": "Login",
-  "login.message.alreadyLoggedIn": "Already logged in",
   "login.message.noSuchEmail": "No user exists with the e-mail address {email}.",
   "login.email.label": "E-Mail Address",
   "login.email.placeholder": "Your e-mail address",

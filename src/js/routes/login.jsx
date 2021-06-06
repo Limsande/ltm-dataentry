@@ -87,6 +87,8 @@ export default class Login extends React.Component {
                     <h4 className="text-center"><FormattedMessage id="login.title" /></h4>
                     <label className={errorLabel}>
                         <FormattedMessage id="login.email.label" />
+                        {/* TODO remove me in production */}
+                        <p className="lower">(Hint: It's test@example.com)</p>
                         <input
                             type="email" name="email" tabIndex="1" required="required" value={this.state.email}
                             placeholder={getTranslationsForCurrentLocale()['login.email.placeholder']}
